@@ -12,8 +12,7 @@ module.exports = {
       options: {
         apiURL: `http://localhost:1337`,
         queryLimit: 1000, // Defaults to 100
-        collectionTypes: [`article`, `user`],
-        singleTypes: [`home-page`, `contact`],
+        collectionTypes: [`category`, `variant`, `product`],
       },
     },
     `gatsby-plugin-image`,
