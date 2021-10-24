@@ -9,6 +9,17 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-material-ui`,
     {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: [
+            "Philosopher:700:latin",
+            "Montserrat:700,600,500,400,300:latin",
+          ],
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: `http://localhost:1337`,
@@ -34,7 +45,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#663399`,
         display: `minimal-ui`,
-        // icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/gatsby-icon.png`,
       },
     },
   ],
