@@ -5,25 +5,28 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import * as React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 
-import Header from "./header"
+import Header from "./header";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
+    query getCategories {
+      allStrapiCategory {
+        edges {
+          node {
+            Name
+            strapiId
+          }
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
-      <Header />
+      <Header categories={data.allStrapiCategory.edges} />
       <div
         style={{
           margin: `0 auto`,
@@ -43,7 +46,7 @@ const Layout = ({ children }) => {
         </footer> */}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

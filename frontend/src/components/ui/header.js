@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   AppBar,
   Button,
@@ -8,12 +8,12 @@ import {
   Toolbar,
   Typography,
   makeStyles,
-} from "@material-ui/core"
+} from "@material-ui/core";
 
 // logos
-import search from "../../images/search.svg"
-import cart from "../../images/cart.svg"
-import account from "../../images/account-header.svg"
+import search from "../../images/search.svg";
+import cart from "../../images/cart.svg";
+import account from "../../images/account-header.svg";
 
 const useStyles = makeStyles(theme => ({
   coloredIndicator: {
@@ -27,10 +27,15 @@ const useStyles = makeStyles(theme => ({
     marginLeft: "auto",
     marginRight: "auto",
   },
-}))
+}));
 
 const Header = ({ siteTitle }) => {
-  const classes = useStyles()
+  const classes = useStyles();
+  const routes = [
+    ...categories,
+    { node: { name: "Contact us", strapiId: "contact" } },
+  ];
+
   return (
     <AppBar color="transparent" elevation={0}>
       <Toolbar>
@@ -59,9 +64,9 @@ const Header = ({ siteTitle }) => {
         </IconButton>
       </Toolbar>
     </AppBar>
-  )
-}
+  );
+};
 
-Header.defaultProps = {}
+Header.defaultProps = {};
 
-export default Header
+export default Header;
