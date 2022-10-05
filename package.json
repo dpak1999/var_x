@@ -1,0 +1,15 @@
+{
+  "name": "var_x",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "deepak <deepakkumardash313@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "run:frontend": "cd frontend && yarn develop",
+    "run:backend": "cd backend && yarn develop",
+    "run:dev": ""
+  },
+  "dependencies": {
+    "concurrently": "^7.4.0"
+  }
+}
